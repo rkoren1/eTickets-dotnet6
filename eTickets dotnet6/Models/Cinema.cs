@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace eTickets.Models
+namespace eTickets_dotnet6.Models
 {
     public class Cinema
     {
@@ -9,5 +9,8 @@ namespace eTickets.Models
         public string Logo { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+
+        //Relationships 
+        public List<Movie> Movies { get; set; }
     }
 }

@@ -7,4 +7,12 @@
     <RootNamespace>eTickets_dotnet6</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\Enums\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.5" />
+  </ItemGroup>
+
 </Project>
