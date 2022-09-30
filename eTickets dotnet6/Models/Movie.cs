@@ -18,7 +18,7 @@ namespace eTickets_dotnet6.Models
         public MovieCategory MovieCategory { get; set; }
 
         //Relationship
-        public List<Actors_Move> Actors_Movies { get; set; }
+        public List<Actor_Movie> Actors_Movies { get; set; }
 
         //Cinema
         public int CinemaId { get; set; }

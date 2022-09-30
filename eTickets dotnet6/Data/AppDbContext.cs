@@ -1,11 +1,12 @@
 ﻿using eTickets_dotnet6.Models;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace eTickets_dotnet6.Data
 {
     public class AppDbContext: DbContext
     {
-        public AppDbContext(DbContext<AppDbContext> options): base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options): base(options)
         {
 
         }

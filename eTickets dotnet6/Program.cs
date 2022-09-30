@@ -1,13 +1,18 @@
 using eTickets_dotnet6.Data;
+using eTickets_dotnet6.Data.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-//DbContext conf
-builder.Services.AddDbContext<AppDbContext>();
+//DbContext configuration
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+//Services
+builder.Services.AddScoped<IActorsService, ActorsService>();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -27,5 +32,6 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+AppDbInitializer.Seed(app);
 
 app.Run();
